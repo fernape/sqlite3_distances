@@ -1,0 +1,3 @@
+/home/fernape/projects/sqlite_distances/build/CMakeFiles/rebuild_cache.dir
+/home/fernape/projects/sqlite_distances/build/CMakeFiles/edit_cache.dir
+/home/fernape/projects/sqlite_distances/build/CMakeFiles/hamming.dir
