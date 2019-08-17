@@ -9,6 +9,29 @@
 #include <sqlite3ext.h>
 SQLITE_EXTENSION_INIT1
 
+int
+_hamming_distance(const char *str_a, const char *str_b)
+{
+	int distance = 0;
+
+	/*
+	 * By definition, Hamming's distance applies only
+	 * to strings of equal length
+	 */
+	if ((str_a == NULL) || (str_b == NULL)
+			|| (strlen(str_a) != strlen(str_b))) {
+		return -1;
+	}
+
+	for (int i = 0; i < strlen(str_a); i++) {
+		if (str_a[i] != str_b[i]) {
+			distance++;
+		}
+	}
+
+	return distance;
+}
+
 void
 hamming_distance(sqlite3_context *context, int argc, sqlite3_value **argv)
 {
@@ -28,20 +51,9 @@ hamming_distance(sqlite3_context *context, int argc, sqlite3_value **argv)
 	const char *str_a = (const char*)sqlite3_value_text(argv[0]);
 	const char *str_b = (const char*)sqlite3_value_text(argv[1]);
 
-	/*
-	 * By definition, Hamming's distance applies only
-	 * to strings of equal length
-	 */
-	if (strlen(str_a) != strlen(str_b)) {
+	int distance = _hamming_distance(str_a, str_b);
+	if (distance == -1) {
 		sqlite3_result_null(context);
-		return;
-	}
-
-	int distance = 0;
-	for (int i = 0; i < strlen(str_a); i++) {
-		if (str_a[i] != str_b[i]) {
-			distance++;
-		}
 	}
 
 	sqlite3_result_int(context, distance);
