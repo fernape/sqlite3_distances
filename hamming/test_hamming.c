@@ -13,6 +13,16 @@ START_TEST(test_different_length)
 END_TEST
 
 /*
+ * Test the result if both strings are
+ * of different length
+ */
+START_TEST(test_different_length2)
+{
+	ck_assert_int_eq(_hamming_distance("aa", "a"), -1);
+}
+
+END_TEST
+/*
  *  Tests what happens if str_a is null
  */
 START_TEST(test_a_is_null)
@@ -51,6 +61,16 @@ START_TEST(test_hamming_is_2)
 END_TEST
 
 /*
+ * Test the difference is what is supposed to be
+ */
+START_TEST(test_hamming_is_3)
+{
+	/* Only 1 different character */
+	ck_assert_int_eq(_hamming_distance("hello", "harle"), 3);
+}
+END_TEST
+
+/*
  * Create test suite
  */
 Suite *
@@ -66,8 +86,12 @@ hamming_suite(void)
 
 	/* Add tests here */
 	tcase_add_test(tc_core, test_different_length);
+	tcase_add_test(tc_core, test_different_length2);
 	tcase_add_test(tc_core, test_a_is_null);
 	tcase_add_test(tc_core, test_b_is_null);
+	tcase_add_test(tc_core, test_hamming_is_1);
+	tcase_add_test(tc_core, test_hamming_is_2);
+	tcase_add_test(tc_core, test_hamming_is_3);
 	suite_add_tcase(s, tc_core);
 
 	return s;
