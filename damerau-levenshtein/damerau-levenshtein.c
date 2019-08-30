@@ -37,11 +37,11 @@ damerau_levenshtein_distance(sqlite3_context *context, int argc, sqlite3_value *
 	/*
 	 * Fill "headers" (first row and first column)
 	 */
-	for (i = 0; i < len_a; i++) {
+	for (i = 0; i <= len_a; i++) {
 		distances[i][0] = i;
 	}
 
-	for (j = 0; j < len_b; j++) {
+	for (j = 0; j <= len_b; j++) {
 		distances[0][j] = j;
 	}
 
