@@ -72,7 +72,7 @@ _damerau_levenshtein_distance(const char *str_a, const char *str_b)
 	 * to be unsigned char. Otherwise we could end up accessing something
 	 * like letter_to_row[-32] or something.
 	 */
-	int letter_to_row[255] = { 0 };
+	int letter_to_row[256] = { 0 };
 
 	/*
 	 * Fill the matrix computing the distances
