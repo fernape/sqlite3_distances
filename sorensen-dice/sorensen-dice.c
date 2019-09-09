@@ -12,29 +12,18 @@
 #include <sqlite3ext.h>
 SQLITE_EXTENSION_INIT1
 
-void
-sorensen_dice_distance(sqlite3_context *context, int argc, sqlite3_value **argv)
+double
+_sorensen_dice_distance(const char *str_a, const char *str_b)
 {
-	assert(argc == 2);
-
-	int type_a = sqlite3_value_type(argv[0]);
-	int type_b = sqlite3_value_type(argv[1]);
-
-	/*
-	 * We can only compute the distance for strings
-	 */
-	if (type_a != SQLITE_TEXT || type_b != SQLITE_TEXT) {
-		sqlite3_result_null(context);
-		return;
-	}
-
-	const char *str_a = (const char*)sqlite3_value_text(argv[0]);
-	const char *str_b = (const char*)sqlite3_value_text(argv[1]);
-
 	int bigrams_count = 0;
 
 	size_t len_a = strlen(str_a);
 	size_t len_b = strlen(str_b);
+
+	if (len_a == 0 || len_b == 0) {
+		return 0;
+	}
+
 	size_t len_b_bigrams = 2 * len_b - 1;
 
 	char *str_b_bigrams = malloc(sizeof(char) * (len_b_bigrams));
@@ -90,9 +79,30 @@ sorensen_dice_distance(sqlite3_context *context, int argc, sqlite3_value **argv)
 	 *  ---------------------
 	 *        |X| + |Y|
 	 */
-	double distance = (2.0 * (bigrams_count) / (float)(len_a + len_b - 2));
+	return (2.0 * (bigrams_count) / (float)(len_a + len_b - 2));
+}
 
-	sqlite3_result_double(context, distance);
+void
+sorensen_dice_distance(sqlite3_context *context, int argc, sqlite3_value **argv)
+{
+	assert(argc == 2);
+
+	int type_a = sqlite3_value_type(argv[0]);
+	int type_b = sqlite3_value_type(argv[1]);
+
+	/*
+	 * We can only compute the distance for strings
+	 */
+	if (type_a != SQLITE_TEXT || type_b != SQLITE_TEXT) {
+		sqlite3_result_null(context);
+		return;
+	}
+
+	const char *str_a = (const char*)sqlite3_value_text(argv[0]);
+	const char *str_b = (const char*)sqlite3_value_text(argv[1]);
+
+
+	sqlite3_result_double(context, _sorensen_dice_distance(str_a, str_b));
 } 
 
 #ifdef _WIN32
