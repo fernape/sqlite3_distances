@@ -1,22 +1,37 @@
 # sqlite3_distances
 String distances for sqlite3
 
+## Implemented functions
+
+* damerau_levenshtein
+* hamming
+* sorensen_dice
+
+## Dependencies
+
+We use [check](https://libcheck.github.io/check/) as test framework.
+A recent version of clang is required.
+
 ## How to build
-`$ git clone https://github.com/fernape/sqlite3_distances.git`
 
-`$ cd sqlite3_distances`
+```
+$ gitlone https://github.com/fernape/sqlite3_distances.git
+$ cd sqlite3_distances
+$ mkdir build && cd build
+$ cmake -G Ninja ../
+$ ninja
+$ ninja test
+```
 
-`$ mkdir build && cd build`
-
-`$ cmake -G Ninja ../`
-
-`$ ninja`
+Fuzzers are in `build/${subproject}` for example in `build/hamming/hamming_fuzzer`. These programs run indefinitely.
 
 ## How to use
 
-`$ sqlite3 test.db`
-`SQLite version 3.29.0 2019-07-10 17:32:03
-Enter ".help" for usage hints.`
+```sqlite3 test.db
+
+SQLite version 3.29.0 2019-07-10 17:32:03
+Enter ".help" for usage hints.
+```
 
 Load library
 
