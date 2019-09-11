@@ -17,8 +17,8 @@ target_link_libraries(test_${target} ${static_lib} ${CHECK_LINK_LIBRARIES})
 add_test(NAME test_${target} COMMAND test_${target})
 
 # Create fuzzer
-#set(fuzzer_exe ${target}_fuzzer)
-#add_executable(${fuzzer_exe} sorensen-dice_fuzzer.c)
-#set_target_properties(${fuzzer_exe} PROPERTIES COMPILE_FLAGS "-g -O1 -fsanitize=fuzzer,address")
-#set_target_properties(${fuzzer_exe} PROPERTIES LINK_FLAGS "-fsanitize=fuzzer,address")
-#target_link_libraries(${fuzzer_exe} ${static_lib})
+set(fuzzer_exe ${target}_fuzzer)
+add_executable(${fuzzer_exe} sorensen_dice_fuzzer.c)
+set_target_properties(${fuzzer_exe} PROPERTIES COMPILE_FLAGS "-g -O1 -fsanitize=fuzzer,address")
+set_target_properties(${fuzzer_exe} PROPERTIES LINK_FLAGS "-fsanitize=fuzzer,address")
+target_link_libraries(${fuzzer_exe} ${static_lib})
