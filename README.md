@@ -9,6 +9,10 @@ String distances for sqlite3
 
 ## Dependencies
 
+[CMake](www.cmake.org)
+
+A CMake's compatible build tool ([ninja](https://ninja-build.org/) is our preferred backend)
+
 We use [check](https://libcheck.github.io/check/) as test framework.
 
 A recent version of clang is required.
