@@ -10,7 +10,10 @@ String distances for sqlite3
 ## Dependencies
 
 We use [check](https://libcheck.github.io/check/) as test framework.
+
 A recent version of clang is required.
+
+SQLite3 is required too.
 
 ## How to build
 
@@ -42,4 +45,5 @@ Use the function
 ```sqlite
 sqlite> select damerau_levenshtein('stuff', 'staff');
 1
-sqlite>```
+sqlite>
+```
