@@ -72,6 +72,8 @@ _sorensen_dice_distance(const char *str_a, const char *str_b)
 
 	}
 
+	free(str_b_bigrams);
+
 	/*
 	 * Distance is defined as:
 	 * 
