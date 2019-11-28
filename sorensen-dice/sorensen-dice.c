@@ -1,3 +1,8 @@
+/* 
+ * Copyright 2019 - 2019, Fernando Apesteguia
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
+
 /*
  * Implementation of the Sorensen-dice distance
  * https://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient

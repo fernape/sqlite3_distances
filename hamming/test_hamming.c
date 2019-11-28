@@ -1,3 +1,8 @@
+/* 
+ * Copyright 2019 - 2019, Fernando Apesteguia
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
+
 #include <check.h>
 #include <stdlib.h>
 #include "hamming.h"

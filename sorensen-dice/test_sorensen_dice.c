@@ -1,3 +1,8 @@
+/* 
+ * Copyright 2019 - 2019, Fernando Apesteguia
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
+
 /*
  * Most of the examples here, come from:
  * http://www.algomation.com/algorithm/sorensen-dice-string-similarity

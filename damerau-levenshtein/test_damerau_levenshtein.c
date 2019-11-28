@@ -1,3 +1,8 @@
+/* 
+ * Copyright 2019 - 2019, Fernando Apesteguia
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
+
 /*
  * Tests taken from:
  * https://scarcitycomputing.blogspot.com/2013/04/damerau-levenshtein-edit-distance.html

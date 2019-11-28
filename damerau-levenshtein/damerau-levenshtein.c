@@ -1,3 +1,8 @@
+/* 
+ * Copyright 2019 - 2019, Fernando Apesteguia
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
+
 /*
  * Implementation for the Damerau-Levenshtein distance
  * https://en.wikipedia.org/wiki/Damerau-Levenshtein_distance

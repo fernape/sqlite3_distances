@@ -1,3 +1,8 @@
+/* 
+ * Copyright 2019 - 2019, Fernando Apesteguia
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
+
 /*
  * Implementation for the Hamming distance
  * https://en.wikipedia.org/wiki/Hamming_distance
