@@ -1,3 +1,8 @@
+/* 
+ * Copyright 2019 - 2019, Fernando Apesteguia
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
+
 /*
  * Tests taken from:
  * http://www.algomation.com/player?algorithm=5657518553ab3d0300f13819

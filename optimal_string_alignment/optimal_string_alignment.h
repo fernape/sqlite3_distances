@@ -1,3 +1,8 @@
+/* 
+ * Copyright 2019 - 2019, Fernando Apesteguia
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
+
 #ifndef __OPTIMAL_STRING_ALIGNMENT_DISTANCE__
 #define __OPTIMAL_STRING_ALIGNMENT_DISTANCE__
 

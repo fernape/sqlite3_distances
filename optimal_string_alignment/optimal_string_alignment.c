@@ -1,3 +1,8 @@
+/* 
+ * Copyright 2019 - 2019, Fernando Apesteguia
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
+
 /*
  * Implementation for the Optimal String Alignment distance
  * https://en.wikipedia.org/wiki/Edit_distance
