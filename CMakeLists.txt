@@ -21,6 +21,9 @@ endif()
 # Enable testing via CTest
 enable_testing()
 
+# Common includes
+include_directories(common)
+
 # Add all the subdirectories
 add_subdirectory(hamming)
 add_subdirectory(damerau-levenshtein)

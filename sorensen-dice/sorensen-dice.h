@@ -1,5 +1,5 @@
 /* 
- * Copyright 2019 - 2019, Fernando Apesteguia
+ * Copyright 2019 - 2020, Fernando Apesteguia
  * SPDX-License-Identifier: BSD-3-Clause
  */
 

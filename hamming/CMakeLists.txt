@@ -18,7 +18,7 @@ add_test(NAME test_${target} COMMAND test_${target})
 
 # Create fuzzer
 set(fuzzer_exe ${target}_fuzzer)
-add_executable(${fuzzer_exe} hamming_fuzzer.c)
+add_executable(${fuzzer_exe} hamming_fuzzer.c ../common/fuzz.c)
 set_target_properties(${fuzzer_exe} PROPERTIES COMPILE_FLAGS "-g -O1 -fsanitize=fuzzer,address")
 set_target_properties(${fuzzer_exe} PROPERTIES LINK_FLAGS "-fsanitize=fuzzer,address")
 target_link_libraries(${fuzzer_exe} ${static_lib})
