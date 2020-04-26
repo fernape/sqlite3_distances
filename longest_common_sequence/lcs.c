@@ -53,7 +53,7 @@ _lcs_distance(const char *str_a, const char *str_b)
 		for (int idx_b = 0; idx_b <= len_b; idx_b++) {
 			if (idx_a == 0 || idx_b == 0) {
 				LCS[idx_a][idx_b] = 0;
-			} else if (str_a[idx_a] == str_b[idx_b]) {
+			} else if (str_a[idx_a - 1] == str_b[idx_b - 1]) {
 				/*
 				 * length is one plus the previous calculated
 				 * lenght.
