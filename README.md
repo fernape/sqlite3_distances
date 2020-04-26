@@ -5,6 +5,7 @@ String distances for sqlite3
 
 * damerau_levenshtein
 * hamming
+* longest common sequence
 * optimal_string_alignment
 * sorensen_dice
 
