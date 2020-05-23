@@ -21,6 +21,12 @@ endif()
 # Enable testing via CTest
 enable_testing()
 
+if(COVERAGE)
+	set(COVERAGE_COMPILE_FLAGS "-fprofile-instr-generate -fcoverage-mapping")
+	set(COVERAGE_LINK_FLAGS "-fprofile-instr-generate")
+	message("Building with coverage support")
+endif()
+
 # Common includes
 include_directories(common)
 
