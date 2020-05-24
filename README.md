@@ -31,8 +31,35 @@ $ cmake -G Ninja ../
 $ ninja
 $ ninja test
 ```
+You can force a specific clang version with:
+
+```
+$ CC=clang10 cmake ../ -GNinja
+```
 
 Fuzzers are in `build/${subproject}` for example in `build/hamming/hamming_fuzzer`. These programs run indefinitely.
+
+## Coverage
+
+To build with coverage support, from the build directory:
+
+```
+$ CC=clang10 cmake -DCOVERAGE=1 ../ -GNinja
+```
+Now, run the tests. In this example, de Damerau-Levenshtein tests:
+
+```
+$ cd damerau-levenshtein
+$ ./test_damerau-levenshtein
+```
+Merge results:
+```
+$ llvm-profdata10  merge -sparse default.profraw -o default.profdata
+```
+Show report:
+```
+$ llvm-cov10 report ./test_damerau-levenshtein -instr-profile=default.profdata
+```
 
 ## How to use
 
