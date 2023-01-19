@@ -1,5 +1,5 @@
 # sqlite3_distances
-String distances for sqlite3
+String distances for sqlite3. These functions will give a numeric value to know how similar two strings are.
 
 ## Implemented functions
 
@@ -61,7 +61,7 @@ Show report:
 $ llvm-cov10 report ./test_damerau-levenshtein -instr-profile=default.profdata
 ```
 
-## How to use
+## How to use it
 
 ```sqlite3 test.db
 
@@ -80,3 +80,7 @@ sqlite> select damerau_levenshtein('stuff', 'staff');
 1
 sqlite>
 ```
+
+## Reporting problems
+
+Please, report any problems by [creating an issue](https://github.com/fernape/sqlite3_distances/issues) :-)
